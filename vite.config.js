@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react'
 // all the personality lives in src/index.css and the components.
 export default defineConfig({
   plugins: [react()],
+  base: '/aakayanae-website/',
 })
