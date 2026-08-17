@@ -1,0 +1,159 @@
+/* ============================================================
+   AAKAYANAE — DESIGN TOKENS
+   Palette pulled from the logo mark: a deep, confident purple,
+   a warm near-black, and an off-white canvas. The logo's "A" is
+   built like a cut/torn shard with a punched-out dot — that cut
+   quality is the recurring motif across the whole site: notched
+   corners on cards & buttons, a jagged (not straight) line
+   between sections, and a punched "dot" used as a bullet mark.
+   ============================================================ */
+
+:root {
+  /* Color */
+  --void: #130B18;          /* near-black, warm/purple undertone */
+  --void-soft: #1E1424;     /* raised panels on black */
+  --purple: #5B2A86;        /* core brand purple (from logo) */
+  --purple-deep: #3B1B5C;   /* shadow / depth shade */
+  --lilac: #C9B6E8;         /* soft tint for text-on-dark, borders */
+  --canvas: #F6F1E9;        /* off-white page background */
+  --canvas-dim: #EBE2D2;    /* slightly deeper off-white for cards */
+  --ink: #1B1420;           /* near-black text on canvas */
+
+  /* Type */
+  --font-display: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Rhythm */
+  --radius-cut: 4px;
+  --section-pad: clamp(64px, 10vw, 120px);
+  --edge-pad: clamp(20px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Shared "cut corner" motif — echoes the shard-like negative
+   space in the logo's A. One corner is notched, never all four,
+   so it reads as a deliberate cut rather than a rounded default. */
+.cut-corner {
+  clip-path: polygon(
+    0 0, 100% 0, 100% calc(100% - 22px),
+    calc(100% - 22px) 100%, 0 100%
+  );
+}
+
+.cut-corner-sm {
+  clip-path: polygon(
+    0 0, 100% 0, 100% calc(100% - 12px),
+    calc(100% - 12px) 100%, 0 100%
+  );
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: var(--edge-pad);
+  padding-right: var(--edge-pad);
+}
+
+.section {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+/* Jagged divider between sections — a torn edge, not a straight
+   line, matching the cut quality of the logo's letterform strokes. */
+.jagged-divider {
+  display: block;
+  width: 100%;
+  height: 34px;
+  margin-bottom: -1px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 26px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--purple);
+  color: var(--canvas);
+}
+.btn-primary:hover { background: var(--purple-deep); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: var(--canvas);
+  border: 1.5px solid var(--lilac);
+}

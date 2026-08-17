@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  background:
+    radial-gradient(ellipse 900px 560px at 82% -10%, rgba(91, 42, 134, 0.55), transparent 60%),
+    var(--void);
+  color: var(--canvas);
+  padding-top: clamp(64px, 9vw, 100px);
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.hero-eyebrow { color: var(--lilac); margin-bottom: 22px; }
+
+.hero-title {
+  font-size: clamp(40px, 6.4vw, 78px);
+  max-width: 15ch;
+}
+
+.hero-title-accent { color: #C9A6F2; }
+
+.hero-sub {
+  margin-top: 26px;
+  max-width: 46ch;
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: rgba(246, 241, 233, 0.78);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+}
+
+/* Floating insight card — the site's core promise, shown up front */
+.hero-card {
+  margin-top: 64px;
+  max-width: 420px;
+  background: var(--void-soft);
+  border: 1px solid rgba(201, 182, 232, 0.22);
+  padding: 26px 26px 22px;
+}
+
+.hero-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hero-card-eyebrow { color: var(--lilac); }
+
+.hero-card-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(246, 241, 233, 0.55);
+}
+
+.hero-card-score {
+  position: relative;
+  width: 142px;
+  height: 142px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+}
+
+.hero-dial {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.hero-dial-track {
+  fill: none;
+  stroke: rgba(246, 241, 233, 0.12);
+  stroke-width: 10;
+}
+
+.hero-dial-value {
+  fill: none;
+  stroke: #C9A6F2;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform-origin: center;
+}
+
+.hero-dial-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+  font-family: var(--font-mono);
+  color: var(--canvas);
+  transform: translateY(2px);
+}
+
+.hero-dial-num {
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+}
+
+.hero-dial-label > span:last-child {
+  font-size: 20px;
+  opacity: 0.9;
+  transform: translateY(6px);
+}
+
+.hero-card-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(201, 182, 232, 0.16);
+}
+
+.hero-card-rows li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  padding: 12px 2px;
+  border-bottom: 1px solid rgba(201, 182, 232, 0.16);
+  color: rgba(246, 241, 233, 0.8);
+}
+
+.hero-card-rows b { font-family: var(--font-mono); font-weight: 500; font-size: 12.5px; }
+.hero-card-rows .ok { color: #8CE0B0; }
+.hero-card-rows .warn { color: #F0B860; }
+
+.jagged-divider { position: relative; display: block; }
+
+@media (max-width: 600px) {
+  .hero-card { margin-left: auto; margin-right: auto; }
+}

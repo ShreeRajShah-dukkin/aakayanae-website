@@ -1,0 +1,41 @@
+.services-eyebrow { color: var(--purple); }
+
+.services-title {
+  margin-top: 16px;
+  font-size: clamp(28px, 3.6vw, 42px);
+  max-width: 18ch;
+  color: var(--ink);
+}
+
+.services-grid {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(27, 20, 32, 0.1);
+  border: 1px solid rgba(27, 20, 32, 0.1);
+}
+
+.service-card {
+  background: var(--canvas);
+  padding: 30px 26px 32px;
+  transition: background 0.2s ease;
+}
+
+.service-card:hover { background: var(--canvas-dim); }
+
+.service-card h3 {
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(27, 20, 32, 0.68);
+}
+
+@media (max-width: 860px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
